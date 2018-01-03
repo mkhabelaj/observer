@@ -27,24 +27,6 @@ class Publisher:
         for subscriber, callback in self.get_subscribers(event).items():
             callback(message)
 
-events = ['lunch', 'breakfast']
-
-publisher = Publisher(events)
-
-
-class SubscriberOne(Subscriber):
-    def update(self, message):
-        print(message)
-
-sus_one = SubscriberOne()
-
-publisher.subscribe('lunch', sus_one)
-
-print(publisher.subscribers)
-
-publisher.dispatch('lunch','lunch')
-# publisher.unsubscribe("lunch", sus_one)
-# publisher.subscribe('lunch', sus_one)
 
 
 
